@@ -8,7 +8,7 @@ feature 'As a user, when I visit the root path' do
     expect(page).to have_content('my notes')
   end
 
-  xscenario 'If I visit a non-existant path I am re-directed to root_path' do
+  scenario 'If I visit a non-existant path I am re-directed to root_path' do
     visit '/cats'
 
     expect(page).to have_current_path(root_path)
