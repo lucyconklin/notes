@@ -4,9 +4,9 @@ class Note < ApplicationRecord
   validates_presence_of :note_type
   validates_length_of :title, maximum: 40
   validates_length_of :description, maximum: 1000
-  validates_presence_of :deadline if :is_goal?
+  validates :deadline, presence: true, if: :is_goal?
 
   def is_goal?
-    note-type == :goal
+    note_type == "goal"
   end
 end

@@ -9,15 +9,18 @@ RSpec.describe Note, type: :model do
 
     it 'if validates deadline if note-type is goal' do
       note = Note.new(title: 'Title',
-                      note_type: 1,
+                      note_type: 1
                       )
       note_2 = Note.new(title: 'Title',
                         note_type: 1,
                         deadline: DateTime.now
                         )
-
+      note_3 = Note.new(title: 'Title',
+                      note_type: 0
+                      )
       expect(note).not_to be_valid
       expect(note_2).to be_valid
+      expect(note_3).to be_valid
     end
   end
 end
