@@ -4,8 +4,9 @@ class Note < ApplicationRecord
   validates_presence_of :note_type
   validates_length_of :title, maximum: 40
   validates_length_of :description, maximum: 1000
-  # validates presence of title
-  # validates presence of type
-  # type is enum
-  # description can only be 1000 characters
+  validates_presence_of :deadline if :is_goal?
+
+  def is_goal?
+    note-type == :goal
+  end
 end

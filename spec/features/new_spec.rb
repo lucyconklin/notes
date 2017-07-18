@@ -30,17 +30,16 @@ feature 'As a user when I visit new_note_path', js: true do
     expect(page).not_to have_content('Deadline')
   end
 
-  xit 'I should be able to submit a valid note' do
+  it 'I should be able to submit a valid note' do
     visit new_note_path
 
     fill_in 'Title', with: 'My First Note'
     fill_in 'Description', with: 'A very good description'
     find("option[value='goal']").click
-    fill_in 'Deadline', with: "07/18/2017"
-    click_on 'save'
+    click_on 'Create Note'
 
     expect(page).to have_current_path(root_path)
-    expect(page).to have_content('You have successfully created a new note.')
+    expect(page).to have_content('You successfully created a new note.')
   end
 
   it 'I should not be able to submit a note without a title' do
@@ -52,20 +51,21 @@ feature 'As a user when I visit new_note_path', js: true do
     fill_in 'Deadline', with: "07/18/2017"
     click_on 'Create Note'
 
-    expect(page).to have_current_path(new_note_path)
+    expect(page).to have_content('create a new note')
     expect(page).to have_content('A very good description')
-    expect(page).to have_content('title cannot be blank')
+    expect(page).to have_content("Title can't be blank")
   end
 
-  xit 'I should not be able to submit a goal without a deadline' do
+  it 'I should not be able to submit a goal without a deadline' do
     visit new_note_path
 
-    fill_in 'title', with: ''
-    fill_in 'description', with: 'A very good description'
-    # select type = goal
-    fill_in 'deadline', with: "07/18/2017"
-    click_on 'save'
+    fill_in 'Title', with: ''
+    fill_in 'Description', with: 'A very good description'
+    find("option[value='goal']").click
+    click_on 'Create Note'
 
-    expect(page).to have_current_path(new_note_path)
+    expect(page).to have_selector(:link_or_button, 'Create Note')
+    expect(page).to have_content('A very good description')
+    expect(page).to have_content("Title can't be blank")
   end
 end
