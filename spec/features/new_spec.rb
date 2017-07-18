@@ -36,7 +36,7 @@ feature 'As a user when I visit new_note_path', js: true do
     fill_in 'Title', with: 'My First Note'
     fill_in 'Description', with: 'A very good description'
     find("option[value='note']").click
-    click_on 'Create Note'
+    click_on 'Save Note'
 
     expect(page).to have_current_path(root_path)
     expect(page).to have_content('You successfully created a new note.')
@@ -49,7 +49,7 @@ feature 'As a user when I visit new_note_path', js: true do
     fill_in 'Description', with: 'A very good description'
     find("option[value='goal']").click
     fill_in 'Deadline', with: "07/18/2017"
-    click_on 'Create Note'
+    click_on 'Save Note'
 
     expect(page).to have_content('create a new note')
     expect(page).to have_content('A very good description')
@@ -62,9 +62,9 @@ feature 'As a user when I visit new_note_path', js: true do
     fill_in 'Title', with: ''
     fill_in 'Description', with: 'A very good description'
     find("option[value='goal']").click
-    click_on 'Create Note'
+    click_on 'Save Note'
 
-    expect(page).to have_selector(:link_or_button, 'Create Note')
+    expect(page).to have_selector(:link_or_button, 'Save Note')
     expect(page).to have_content('A very good description')
     expect(page).to have_content("Title can't be blank")
   end

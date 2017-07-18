@@ -16,6 +16,7 @@
       <td><%= note.note_type %></td>
       <td><p><%= note.deadline if note.deadline %></p></td>
       <td><%= link_to 'Edit', edit_note_path(note), html: { class:"edit-button" } %></td>
+      <td><%= link_to 'Delete', note_path(note), :method => 'delete', html: { class:"delete-button" } %></td>
       <td></td>
     <tr>
   <% end %>

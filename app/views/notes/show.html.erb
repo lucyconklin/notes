@@ -9,6 +9,6 @@
   <p><%= @note.created_at %></p>
   <p><%= @note.updated_at %></p>
   <%= link_to 'Edit', edit_note_path(@note), html: { class:"edit-button-wide" } %>
-
+  <%= link_to 'Delete', note_path(@note), :method => 'delete', html: { class:"delete-button" } %>
   <%= link_to 'Home', root_path, html: { class:"home-button-wide"} %>
 </div>
