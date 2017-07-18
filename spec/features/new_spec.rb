@@ -35,7 +35,7 @@ feature 'As a user when I visit new_note_path', js: true do
 
     fill_in 'Title', with: 'My First Note'
     fill_in 'Description', with: 'A very good description'
-    find("option[value='goal']").click
+    find("option[value='note']").click
     click_on 'Create Note'
 
     expect(page).to have_current_path(root_path)

@@ -25,6 +25,8 @@ feature 'As a user, when I visit the root path' do
     expect(page).to have_content(note.title)
     expect(page).not_to have_content(note.description)
     expect(page).to have_content(note.deadline)
+    expect(page).to have_content(note.created_at)
+    expect(page).to have_content(note.updated_at)
   end
 
   xscenario 'notes are grouped by creation date' do

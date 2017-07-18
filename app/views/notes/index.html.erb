@@ -2,9 +2,23 @@
   <h1>my notes</h1>
   <%= link_to 'create a new note', new_note_path %>
 
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Deadline</th>
+      <th></th>
+      <th></th>
+    </tr>
   <% @notes.each do |note| %>
-    <p><%= note.title %></p>
-    <p><%= note.deadline %></p>
-
+    <tr>
+      <td><%= link_to note.title, note_path(note) %></td>
+      <td><%= note.note_type %></td>
+      <td><p><%= note.deadline if note.deadline %></p></td>
+      <td><%= link_to 'Edit', edit_note_path(note), html: { class:"edit-button" } %></td>
+      <td></td>
+    <tr>
   <% end %>
+</table>
+
 </div>
