@@ -1,0 +1,12 @@
+<div class="container">
+  <% if @note.errors %>
+    <ul class="errors">
+      <% @note.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <h1>edit note</h1>
+  <%= render 'form' %>
+</div>
