@@ -18,6 +18,25 @@ class NotesController < ApplicationController
     end
   end
 
+  def show
+    @note = Note.find(params[:id])
+  end
+
+  def edit
+    @note = Note.find(params[:id])
+  end
+
+  def update
+    @note = Note.find(params[:id])
+    @note.update_attributes(note_params)
+    if @note.save
+      flash[:success] = "You have successfully edited this note."
+      redirect_to note_path(@note)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def note_params

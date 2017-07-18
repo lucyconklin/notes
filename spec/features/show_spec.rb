@@ -8,12 +8,12 @@ feature "As a user, I can see a note's show page" do
                        deadline: DateTime.now
                        )
 
-    vist root_path
+    visit root_path
 
-    expect(page).to have_content(:link_or_button, 'Edit')
+    expect(page).to have_content(:link_or_button, note.title)
   end
 
-  xscenario "and I see the note's details" do
+  scenario "and I see the note's details" do
     note = Note.create(title: 'This is a title',
                        description: 'this is a description',
                        note_type: 'goal',

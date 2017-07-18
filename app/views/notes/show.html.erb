@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Note</h1>
+  <p><%= @note.title %></p>
+  <p><%= @note.description %></p>
+  <p><%= @note.note_type %></p>
+  <% if @note.deadline %>
+    <p><%= @note.deadline %>
+  <% end %>
+  <p><%= @note.created_at %></p>
+  <p><%= @note.updated_at %></p>
+  <%= link_to 'Edit', edit_note_path(@note), html: { class:"edit-button-wide" } %>
+
+  <%= link_to 'Home', root_path, html: { class:"home-button-wide"} %>
+</div>
