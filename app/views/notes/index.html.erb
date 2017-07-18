@@ -1,6 +1,6 @@
 <div class="container">
   <h1>my notes</h1>
-  <%= link_to 'create a new note', new_note_path %>
+  <%= link_to 'create a new note', new_note_path, class:"edit-button wide-button" %>
 
   <table>
     <tr>
@@ -14,10 +14,9 @@
     <tr>
       <td><%= link_to note.title, note_path(note) %></td>
       <td><%= note.note_type %></td>
-      <td><p><%= note.deadline if note.deadline %></p></td>
-      <td><%= link_to 'Edit', edit_note_path(note), html: { class:"edit-button" } %></td>
-      <td><%= link_to 'Delete', note_path(note), :method => 'delete', html: { class:"delete-button" } %></td>
-      <td></td>
+      <td><p><%= note.deadline.strftime('%m/%d/%Y') if note.deadline %></p></td>
+      <td><%= link_to 'Edit', edit_note_path(note), class:"edit-button small-button" %></td>
+      <td><%= link_to 'Delete', note_path(note), :method => 'delete', class:"delete-button small-button" %></td>
     <tr>
   <% end %>
 </table>

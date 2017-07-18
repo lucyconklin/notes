@@ -17,3 +17,157 @@
  .hidden {
    display: none;
  }
+
+ body {
+   background-color: #13889b;
+   font-family: 'Merriweather Sans', sans-serif;
+ }
+
+ .container {
+   width: 80%;
+   min-width: 400px;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ h1 {
+   color: #ffe780;
+   text-transform: uppercase;
+   text-align: center;
+ }
+
+ h3 {
+   color: #fff;
+   text-transform: uppercase;
+   display: inline;
+ }
+
+ .deadline {
+   display: inline;
+   width: 50%;
+   float: right;
+ }
+
+ .deadline p {
+   display: inline;
+ }
+
+ .description {
+   margin-top: 20px;
+   padding: 15px;
+   width: 100%;
+   min-height: 200px;
+   background-color: rgba(255,255,255,0.2);
+ }
+
+ .description p {
+   color: rgba(0,0,0,0.5);
+ }
+
+ p {
+   color: rgba(255,255,255,0.5)
+ }
+
+ table {
+   margin-top: 30px;
+   width: 100%;
+ }
+
+ th {
+   color: #fff;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   text-align: left;
+ }
+
+ tr {
+   height: 30px;
+ }
+
+ td {
+   min-width: 120px;
+   color: rgba(255,255,255,0.5);
+ }
+
+ td a {
+   display: block;
+   text-decoration: none;
+   color: rgba(255,255,255,0.5);
+   height: 100%;
+ }
+
+ td a:hover {
+   color: #fff;
+   background-color: rgba(255,255,255,0.5);
+ }
+
+ .new-note-button {
+   width: 80%;
+   border: 2px solid #ffe780;
+   padding: 10px;
+   text-align: center;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: 700;
+   color: #ffe780;
+ }
+
+  .new-note-button:hover {
+    background-color: #ffe780;
+    color: #13889b;
+  }
+
+  a.small-button {
+    width: 80%;
+    border: 2px solid;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+  }
+
+  .edit-button {
+    border-color: #ffe780;
+    color: #ffe780;
+  }
+
+  .edit-button:hover {
+    border-color: #ffe780;
+    background-color: #ffe780;
+    color: #13889b;
+  }
+
+  .delete-button {
+    border-color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.5);
+  }
+
+  .delete-button:hover {
+    border-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.5);
+    color: #13889b;
+  }
+
+  .home-button {
+    border-color: rgba(0,0,0,0.5);
+    color: rgba(0,0,0,0.5);
+  }
+
+  .home-button:hover {
+    border-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.5);
+    color: #13889b;
+  }
+
+  a.wide-button {
+    display: block;
+    width: 100%;
+    border: 2px solid;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
