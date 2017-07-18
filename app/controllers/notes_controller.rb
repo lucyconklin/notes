@@ -14,7 +14,7 @@ class NotesController < ApplicationController
       flash[:success] = "You successfully created a new note."
       redirect_to root_path
     else
-      render 'new'
+      render :new
     end
   end
 

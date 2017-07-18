@@ -26,4 +26,22 @@ feature 'As a user, when I visit the root path' do
     expect(page).not_to have_content(note.description)
     expect(page).to have_content(note.deadline)
   end
+
+  xscenario 'notes are grouped by creation date' do
+    visit root_path
+
+    note = Note.create(title: 'This is a title',
+                       description: 'this is a description',
+                       note_type: 'goal',
+                       deadline: DateTime.now
+                       )
+    note_2 = Note.create(title: 'This is a title',
+                       description: 'this is a description',
+                       note_type: 'goal',
+                       deadline: DateTime.now
+                       )
+    expect(page).to have_content(note.title)
+    expect(page).to have_content(note_2.title)
+    expect(page).to have_content('Note 1 and note 2 are grouped')
+  end
 end
