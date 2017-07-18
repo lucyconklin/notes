@@ -8,22 +8,5 @@
   <% end %>
 
   <h1>create a new note</h1>
-
-  <%= form_for @note, html: {class: 'form'} do |f| %>
-    <%= f.label 'title' %>:
-    <%= f.text_field :title %>
-
-    <%= f.label 'description' %>:
-    <%= f.text_area :description %>
-
-    <%= f.label 'type' %>
-    <%= f.select :note_type, ['note', 'goal'] %>
-
-    <div class="hidden form-deadline">
-      <%= f.label 'deadline' %>
-      <%= f.date_field :deadline %>
-    </div>
-
-    <%= f.submit %>
-  <% end %>
+  <%= render 'form' %>
 </div>
