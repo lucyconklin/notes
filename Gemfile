@@ -41,6 +41,8 @@ group :development, :test do
   gem 'rspec-rails'
   # gem 'nyan-cat-formatter'
   gem 'capybara'
+  gem 'selenium-webdriver'
+  gem "chromedriver-helper"
   gem 'launchy'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
