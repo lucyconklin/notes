@@ -13,4 +13,17 @@ feature 'As a user, when I visit the root path' do
 
     expect(page).to have_current_path(root_path)
   end
+
+  scenario 'I should see a list of all notes' do
+    note = Note.create(title: 'This is a title',
+                       description: 'this is a description',
+                       note_type: 'goal',
+                       deadline: DateTime.now
+                       )
+    visit root_path
+
+    expect(page).to have_content(note.title)
+    expect(page).not_to have_content(note.description)
+    expect(page).to have_content(note.deadline)
+  end
 end
