@@ -5,8 +5,8 @@
 This is a simple CRUD app for notes built with Rails.
 
 ## Table of Contents
-- [Highlights](#highlights)
 - [Setup](#setup)
+- [Highlights](#highlights)
 - [Next Steps](#next-steps)
 
 ## Setup
@@ -50,7 +50,7 @@ And navigate to [http://localhost:3000/](http://localhost:3000/) to see it in th
 I just wanted to point out a few fun things in this repo.
 
 ### Enum and Conditional Validation
-First, I'm using an enum for note.note_type, and this field is conditionally validated. If they note is saved as a goal, then it must also have a deadline. This works for update as well.
+First, I'm using an enum for note.note_type, and this field is conditionally validated. If they note is saved as a goal, then it must also have a deadline.
 
 ```
 app/models/note.rb
@@ -71,6 +71,14 @@ end
 
 ### JavaScript for the optional deadline field
 I used JavaScript to display the deadline field when "goal" is selected as the type of note.
+```
+$("select")
+  .on("change", function(e){
+    var isGoal = this.value == "goal";
+    console.log('HELLOOOOOO', isGoal);
+    $(".form-deadline").toggleClass("hidden", !isGoal);
+  }).change();
+```
 
 This also required me to enable JavaScript in the Capybara tests and run it through the browser. Previously, I have used selenium to run it in a very old version of Firefox, which always felt a little strange, and possibly unsafe. The [chromedriver-helper gem](https://github.com/flavorjones/chromedriver-helper) was a big help here and enabled me to run these tests in Chrome.
 
