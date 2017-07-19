@@ -75,7 +75,6 @@ I used JavaScript to display the deadline field when "goal" is selected as the t
 $("select")
   .on("change", function(e){
     var isGoal = this.value == "goal";
-    console.log('HELLOOOOOO', isGoal);
     $(".form-deadline").toggleClass("hidden", !isGoal);
   }).change();
 ```
