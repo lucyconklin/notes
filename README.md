@@ -116,6 +116,8 @@ end
 ### UI Improvements
 When the deadline field appears in the form, I'd love for that to happen more slowly with a nice smooth animated transition. An even better feature would be to have the content there, but faded and disabled if the note type is 'note'. When 'goal' is selected from the dropdown, it would then be normal opacity. Like this from my original mockups:
 
+<img width="1008" alt="screen shot 2017-07-18 at 10 06 51 pm" src="https://user-images.githubusercontent.com/16562801/28347831-791d3a14-6c07-11e7-986d-1a8015d8170a.png">
+
 I decided not to go with Bootstrap or SASS on this app, because I only wanted to do one massive styling push. I think the forms could be improved with the bootstrap-form gem, and the whole app with a styling framework, but I just kept it simple.
 
 As for the responsiveness, I used percentages wherever possible, but it falls apart with the table. To solve this I would probably redesign those rows to better display on smaller devices. Most likely I would stack the information on top of the edit and delete buttons.
