@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 
   def index
-    @notes = Note.select(:id, :title, :note_type, :deadline, :created_at).group(:created_at)
+    @notes = Note.select(:id, :title, :note_type, :deadline, :created_at).order('created_at desc')
   end
 
   def new
