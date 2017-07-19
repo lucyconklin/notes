@@ -1,0 +1,7 @@
+<% if @note.errors %>
+  <ul class="errors">
+    <% @note.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -5,13 +5,15 @@
   <%= f.label 'description' %>
   <%= f.text_area :description %>
 
-  <%= f.label 'type' %>
-  <%= f.select :note_type, ['note', 'goal'] %>
+  <div class="deadline-group">
+    <%= f.label 'type', id:'type-label' %>
+    <%= f.select :note_type, ['note', 'goal'] %>
 
-  <div class="hidden form-deadline">
-    <%= f.label 'deadline' %>
-    <%= f.date_field :deadline %>
+    <div class="hidden form-deadline">
+      <%= f.label 'deadline' %>
+      <%= f.date_field :deadline %>
+    </div>
   </div>
 
-  <%= f.submit 'Save Note' %>
+  <%= f.submit 'Save Note', class:"wide-button save-button" %>
 <% end %>

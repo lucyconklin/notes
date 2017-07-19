@@ -1,15 +1,15 @@
 <div class="container">
+  <%= link_to 'create a new note', new_note_path, class:"edit-button medium-button" %>
   <h1>my notes</h1>
-  <%= link_to 'create a new note', new_note_path, class:"edit-button wide-button" %>
 
   <table>
-    <tr>
+    <thead>
       <th>Title</th>
       <th>Type</th>
       <th>Deadline</th>
-      <th></th>
-      <th></th>
-    </tr>
+      <th> </th>
+      <th> </th>
+    </thead>
   <% @notes.each do |note| %>
     <tr>
       <td><%= link_to note.title, note_path(note) %></td>
@@ -17,7 +17,7 @@
       <td><p><%= note.deadline.strftime('%m/%d/%Y') if note.deadline %></p></td>
       <td><%= link_to 'Edit', edit_note_path(note), class:"edit-button small-button" %></td>
       <td><%= link_to 'Delete', note_path(note), :method => 'delete', class:"delete-button small-button" %></td>
-    <tr>
+    </tr>
   <% end %>
 </table>
 
