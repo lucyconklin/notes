@@ -45,7 +45,7 @@ feature 'As a user, I can edit notes' do
     expect(page).to have_content(title)
     expect(page).to have_content(description)
     expect(page).to have_content(@note.note_type)
-    expect(page).to have_content('2001-02-03')
+    expect(page).to have_content('02/03/2001')
 
     expect(page).not_to have_content('This is a title')
     expect(page).not_to have_content('this is a description')

@@ -26,6 +26,6 @@ feature "As a user, I can see a note's show page" do
     expect(page).to have_content(note.title)
     expect(page).to have_content(note.description)
     expect(page).to have_content(note.note_type)
-    expect(page).to have_content(note.deadline)
+    expect(page).to have_content(note.deadline.strftime('%m/%d/%Y'))
   end
 end

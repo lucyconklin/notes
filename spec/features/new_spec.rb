@@ -4,9 +4,9 @@ feature 'As a user when I visit new_note_path', js: true do
   it 'I should see a form to create a new note' do
     visit new_note_path
 
-    expect(page).to have_content('create a new note')
-    expect(page).to have_content('Title')
-    expect(page).to have_content('Description')
+    expect(page).to have_content('CREATE A NEW NOTE')
+    expect(page).to have_content('TITLE')
+    expect(page).to have_content('DESCRIPTION')
     expect(page).to have_select('note_note_type', options: ['note', 'goal'])
   end
 
@@ -17,7 +17,7 @@ feature 'As a user when I visit new_note_path', js: true do
     fill_in 'Description', with: "A description of my note..."
     find("option[value='goal']").click
 
-    expect(page).to have_content('Deadline')
+    expect(page).to have_content('DEADLINE')
   end
 
   it 'If type: note is selected, I not should see an input for deadline' do
@@ -51,7 +51,7 @@ feature 'As a user when I visit new_note_path', js: true do
     fill_in 'Deadline', with: "07/18/2017"
     click_on 'Save Note'
 
-    expect(page).to have_content('create a new note')
+    expect(page).to have_content('CREATE A NEW NOTE')
     expect(page).to have_content('A very good description')
     expect(page).to have_content("Title can't be blank")
   end
